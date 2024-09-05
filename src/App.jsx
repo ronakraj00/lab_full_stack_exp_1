@@ -3,12 +3,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import NumberConverter from "./components/NumberConverter"
+import ExtractText from './components/ExtractText'
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <NumberConverter/>
+      <ExtractText/>
     </>
   )
 }

@@ -1,9 +1,11 @@
 import { useState } from "react";
+import "../numberConverter.css"
+
 
 function NumberConverter() {
 
   const [input,setInput]=useState(0)
-  const buttons=["decimal","octadecimal","hexadecimal"]
+  const buttons=[("decimal","blue"),("octadecimal","green"),("hexadecimal","red")]
   const [answer,setAnswer]=useState()
 
   function handleInput(event){
@@ -32,9 +34,9 @@ function NumberConverter() {
           <input value={input} onChange={handleInput} placeholder="enter binary number"/>
         </div>
         <div>
-          {buttons.map(btn=>{
+          {buttons.map((btn,color)=>{
             return (
-              <button key={btn} onClick={()=>handleConvert(input,btn)}>
+              <button key={btn} style={{background:`${color}`}} onClick={()=>handleConvert(input,btn)}>
                 {btn}
               </button>
             )
